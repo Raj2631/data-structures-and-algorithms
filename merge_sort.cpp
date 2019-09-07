@@ -36,7 +36,7 @@ void merge(int a[], int left[], int right[], int nl, int nr)
 	while (i < nl && j < nr) 
 	{
         //If element at i index of left array is lesser or equal to the element at j index of right array, then it is pushed to the array a[] where we are merging the 2 arrays in sorted order.
-		if (left[i] <= right[j]) 
+        if (left[i] <= right[j]) 
 		{
 			a[k] = left[i];
 			i++;
