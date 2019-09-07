@@ -37,16 +37,16 @@ void merge(int a[], int left[], int right[], int nl, int nr)
 	{
         //If element at i index of left array is lesser or equal to the element at j index of right array, then it is pushed to the array a[] where we are merging the 2 arrays in sorted order.
         if (left[i] <= right[j]) 
-		{
-			a[k] = left[i];
-			i++;
-		}
-        //Similar to the above if part, but this executes when element at right[j] is lesser than element at left[i].
-		else 
-		{
-			a[k] = right[j];
-			j++;
-		}
+	{
+		a[k] = left[i];
+		i++;
+	}
+	//Similar to the above if part, but this executes when element at right[j] is lesser than element at left[i].
+	else 
+	{
+		a[k] = right[j];
+		j++;
+	}
         //increasing index of the parent array. (since the index is to be increased by 1 after the value at a[k] has been inserted after the above comparisons.)
 		k = k + 1; 
 	}
