@@ -90,5 +90,5 @@ void mergesort(int a[], int n)
 	}    
 	mergesort(left, mid); //2 parameters, left array and it's size.
 	mergesort(right, n - mid);//^^
-	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid.
+	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid..
 }
