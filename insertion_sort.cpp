@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int main() {
@@ -24,6 +25,5 @@ int main() {
     {
         cout << array[i] << endl;
     }
-	
 	return 0;
 }
