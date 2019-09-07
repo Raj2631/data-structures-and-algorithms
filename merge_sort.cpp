@@ -11,7 +11,7 @@ int main(void)
     cout << "How many elements are to be entered in the array?" << endl; 
     cin >> n;
     cout << "Enter the elements of the array." << endl;
-	int A[n];
+		int A[n];
     for (int i = 0; i < n; i++)
     {
         cin >> A[i];
@@ -90,5 +90,5 @@ void mergesort(int a[], int n)
 	}    
 	mergesort(left, mid); //2 parameters, left array and it's size.
 	mergesort(right, n - mid);//^^
-	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid..
+	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid.
 }
