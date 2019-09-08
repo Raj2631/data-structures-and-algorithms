@@ -24,6 +24,31 @@ int main(void)
 	}
 }
 
+//2 parameters, array reference, and it's size.
+void mergesort(int a[], int n)
+{
+	// return at base case, if array is smaller than 2, i.e, then the array is already sorted since there is only 1 element present.
+	if (n < 2) 
+	{
+   		return;
+   	}
+	int mid = n / 2; 
+	int left[mid]; //The left subarray.
+	int right[n - mid];//The right subarray.
+	//copying the elements of the parent array into the left subarray, which is the half of the parent array
+	for (int i = 0; i <= mid - 1; i++) 
+	{
+	left[i] = a[i];
+	}    
+	for (int i = mid; i <= n - 1; i++) //same thing as above, but for the right subarray.
+	{
+		right[i - mid] = a[i];
+	}    
+	mergesort(left, mid); //2 parameters, left array and it's size.
+	mergesort(right, n - mid);//^^
+	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid.
+}
+
 /*
 for this function, 5 parameters are passed, a[] is the array where we are to merge the 2 sub arrays, left[] and right[], 
 nl tells us the number of elements present in the left subarray, while nr tells us the number of elements present in the right subarray.
@@ -71,30 +96,4 @@ void merge(int a[], int left[], int right[], int nl, int nr)
  		j++;
  		k++;
  	}
-}
-
-
-//2 parameters, array reference, and it's size.
-void mergesort(int a[], int n)
-{
-	// return at base case, if array is smaller than 2, i.e, then the array is already sorted since there is only 1 element present.
-	if (n < 2) 
-	{
-        return;
-    }
-	int mid = n / 2; 
-	int left[mid]; //The left subarray.
-	int right[n - mid];//The right subarray.
-	//copying the elements of the parent array into the left subarray, which is the half of the parent array
-	for (int i = 0; i <= mid - 1; i++) 
-	{
-		left[i] = a[i];
-	}    
-	for (int i = mid; i <= n - 1; i++) //same thing as above, but for the right subarray.
-	{
-		right[i - mid] = a[i];
-	}    
-	mergesort(left, mid); //2 parameters, left array and it's size.
-	mergesort(right, n - mid);//^^
-	merge(a, left, right, mid , n - mid ); //since elements of left subarray = mid, elements of right subarray = n - mid.
 }
